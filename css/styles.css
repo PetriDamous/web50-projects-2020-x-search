@@ -229,6 +229,7 @@ header {
 
 
 .search__logo {
+    position: relative;
     width: 70%;
     max-width: 20rem;
 }
@@ -294,6 +295,7 @@ footer {
 
 .search__box {
     border: none;
+    background-color: transparent;
     width: 100%;
 }
 
@@ -312,10 +314,27 @@ footer {
     width: 1rem;
 }
 
-.search__logo::after {
+.logo-subtext {
+    position: relative;
+}
+
+.logo-subtext::after {
     content: "Images";
+    display: block;
     color: #4285f4;
-    transform: translate(-40px, -40px);
+    position: absolute;
+    left: 10em;
+    top: 3.5em;
+    /* transform: translateX(300px); */
+    font-size: var(--fs-300);
+}
+
+@media (min-width: 31.25em) {
+    .logo-subtext::after {
+        left: 13em;
+        top: 4.2em;
+        font-size: var(--fs-400);
+    }
 }
 
 .btn {
