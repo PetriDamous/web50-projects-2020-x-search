@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
+    <header class="advance-header bg-accent">
+        <div class="header__logo">
+            <a href="index.html">
+                <img src="images/google-2015.svg" alt="Google logo">
+            </a>            
+        </div>
         <nav class="primary-nav">
             <ul class="primary-nav__list">
                 <li><a href="index.html">Google Search</a></li>
@@ -15,12 +21,83 @@
         </nav>
     </header>
 
-    <section>
-        <h1 class="advance-search">Advanced Search</h1>
-        <form action=""></form>
+    <section class="search-advance">
+        <div class="search-advance__heading form  border-bottom-300">
+            <h1 class="container">Advanced Image Search</h1>
+        </div>
+        <form class="advance-form container" action="">
+            <div class="advance-form__section border-bottom-300 md-space">
+                <h2>Find images with...</h2>
+                <div class="advance-form__elements">
+                    <div class="split">
+                        <label for="">all these words:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">this exact word or phrase:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">any of these words:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">none of these words:</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="advance-form__section border-bottom-300">
+                <h2>Then narrow your results by...</h2>
+                <div class="advance-form__elements">                    
+                    <div class="split">
+                        <label for="">image size:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">aspect ratio:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">colors in image:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">type of image:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">region:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">site or domain:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for=""><a href="https://support.google.com/websearch/answer/510?p=adv_safesearch&hl=en&visit_id=637466036484341416-2771455525&rd=1">SafeSearch:</a></label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for="">file type:</label>
+                        <input type="text">
+                    </div>
+                    <div class="split">
+                        <label for=""><a href="https://support.google.com/websearch/answer/29508?p=ws_images_usagerights&hl=en&visit_id=637466036484341416-2771455525&rd=1">usage rights:</a></label>
+                        <input type="text">
+                    </div>
+                    <input class="btn btn-advance" type="submit" value="Advanced Search">
+                </div>
+            </div>
+        </form>
     </section>
 
-    <section></section>
-    <footer></footer>
+    <footer class="bg-accent">
+        <div class="footer-container">            
+            <a href="https://support.google.com/websearch/?visit_id=637465907947202453-4154173585&hl=en&rd=2#topic=3180360">Help</a>  
+            <a href="https://policies.google.com/privacy?hl=en&fg=1">Privacy</a>
+            <a href="https://policies.google.com/terms?hl=en&fg=1">Terms</a>    
+        </div>
+    </footer>
 </body>
 </html>

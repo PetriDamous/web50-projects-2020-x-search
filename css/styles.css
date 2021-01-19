@@ -30,8 +30,10 @@
     --clr-neutral-800: #202124;
     --clr-neutral-900: #020203;
 
-    --clr-primary-300: #f3f7ff;
-    --clr-primary-400: #8ea8da;
+    --clr-primary-100: #357ae8;  
+    --clr-primary-200: #4d90fe; 
+
+    --clr-accent: #d93025;
 
     --br-100: 0.25rem;
     --br-200: 0.75rem;
@@ -140,6 +142,14 @@ body {
     margin-top: var(--flow-space, var(--spacer));
 }
 
+.sm-space {
+    margin-top: 1.5rem;
+}
+
+.md-space {
+    margin-top: 3rem;
+}
+
 .xl-space {
     margin-top: 5rem;
 }
@@ -172,14 +182,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
+.bg-light {
+    --txt-color: var(--clr-neutral-500);
+    --bc: var(--clr-neutral-100);
+}
+
+.bg-accent {
+    --txt-color: var(--clr-neutral-400);
+    --bc: var(--clr-neutral-200);
+    border: 1px solid var(--clr-neutral-250);
+}
+
+.border-bottom-300 {
+    border-bottom: 1px solid var(--clr-neutral-300);
 }
 
 /* Typography */
-
-.search input[type="text"] {
-    font-size: var(--fs-300);
-}
 
 a {
     text-decoration: none;
@@ -190,29 +210,74 @@ a:hover {
     text-decoration: underline;
 }
 
-header * {
-    color: var(--clr-neutral-500);
+.primary-header * {
+    color: var(--txt-color, var(--clr-neutral-500));
     font-size: var(--fs-200);
 }
 
+.advance-header * {
+    color: var(--txt-color, var(--clr-neutral-500));
+    font-size: var(--fs-300);
+}
+
+.search input[type="text"] {
+    font-size: var(--fs-300);
+}
+
+.advance-form__elements label {
+    font-size: var(--fs-300);
+}
+
 footer * {
-    color: var(--clr-neutral-400);
+    color: var(--txt-color, var(--clr-neutral-400));
     font-weight: var(--fw-400);
+}
+
+.search-advance__heading h1 {
+    color: var(--clr-accent);
+    font-weight: var(--fw-100);
+}
+
+.advance-form__section h2 {
+    font-size: var(--fs-300);
 }
 
 /* Layout */
 
-header {
+.primary-header {
     padding: 1rem 2rem;
+    background-color: var(--bc, var(--clr-neutral-100));
 }
 
 .primary-nav ul {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .primary-nav ul > * + * {
-    margin-left: 1rem;
+    margin-left: 2rem;
+}
+
+.advance-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--bc, var(--clr-neutral-100));
+}
+
+@media (min-width: 30em) {
+    .advance-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.header__logo {
+    width: 6rem;
+    cursor: pointer;
 }
 
 .search {
@@ -226,7 +291,6 @@ header {
     align-items: center;
     text-align: center;
 }
-
 
 .search__logo {
     position: relative;
@@ -269,24 +333,64 @@ header {
 
 footer {
     margin-top: auto;
-    background-color: var(--clr-neutral-200);
-    border: 1px solid var(--clr-neutral-250);
     padding: 1rem;
+    background-color: var(--bc, var(--clr-neutral-200));
+}
+
+.primary-footer {
+    --justify: space-evenly;
+    --align-items: none;
 }
 
 .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    
+    gap: 1rem;    
 }
 
 @media (min-width: 30em) {
-    .footer-container {
-        justify-content: space-evenly;
+    .footer-container {        
         flex-direction: row;
         gap: 1rem;
     }
+
+    .footer-justify {
+        justify-content: var(--justify);
+    }
+}
+
+.search-advance__heading {
+    padding: 2rem 0;
+}
+
+.advance-form__section {
+    padding: 1.5rem;
+}
+
+.advance-form__section > * {
+    margin-top: 1.5rem;
+}
+
+.advance-form__section > * div {
+    margin-top: 1.5rem;
+}
+
+.advance-form__section h2 {
+    max-width: 11rem;
+}
+
+.advance-form__elements {
+    display: flex;
+    flex-direction: column;
+}
+
+.advance-form__elements input[type="text"] {
+    padding: .3rem;
+}
+
+.advance-form__elements input[type="submit"] {
+    margin-top: 1.5rem;
+    align-self: flex-end;
 }
 
 
@@ -341,11 +445,11 @@ footer {
     border: none;
     padding: .75em 1em;
     display: inline-block;
-    cursor: pointer;
+    cursor: pointer;    
+    font-weight: var(--fw-700);
 }
 
 .btn-submit {
-    font-weight: var(--fw-700);
     color: var(--clr-neutral-500);
     background-color: var(--clr-neutral-200);
     border: 1px solid var(--clr-neutral-150);
@@ -359,4 +463,11 @@ footer {
     background-color: var(--clr-neutral-150);
     border: 1px solid var(--clr-neutral-250);
     color: var(--clr-neutral-800);
+}
+
+.btn-advance {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-200);
+    border: 1px solid var(--clr-primary-100);
+    border-radius: var(--br-100);
 }
